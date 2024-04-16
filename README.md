@@ -4,7 +4,7 @@
 </p>
 </h1>
 
-# Catalyst + Strapi (Blog and Customer Service Backend)
+# Catalyst + Strapi <br><sub>Headless CMS Backend</sub>
 
 Integrate BigCommerce's Catalyst storefront with Strapi, to have it manage the built-in blog's content and power a new customer service section. Both with support for i18n, so you can localize the content per locale. Demo data for _en_ and _es_ locales is provided.
 
@@ -31,16 +31,28 @@ https://catalyst-with-strapi.vercel.app/customer-service
 
 ## Setup
 
-1. Clone this repo: `git clone https://github.com/bigcommerce-labs/catalyst-strapi-backend.git`
+1. Clone this repo: 
+```shell copy
+git clone https://github.com/bigcommerce-labs/catalyst-strapi-backend.git
+```
 
-2. Jump into the dir: `cd catalyst-strapi-backend`
+2. Jump into the dir: 
+```shell copy
+cd catalyst-strapi-backend
+```
 
-3. Install dependencies: `npm install`
+3. Install dependencies:
+```shell copy
+npm install
+```
 
-4. Create a .env file based on the sample: `cp .env.example .env`
+4. Create a .env file based on the sample: 
+```shell copy
+cp .env.example .env
+```
 
 ```bash
-HOST=localhost
+HOST=0.0.0.0
 PORT=1337
 APP_KEYS="toBeModified1,toBeModified2"
 API_TOKEN_SALT=tobemodified
@@ -58,7 +70,7 @@ npm run build
 npm run develop
 ```
 
-6. Log into your Strapi instance after it's done initially building to create your admin account. The local admin is usually at: `http://localhost:1337/admin`
+6. Log into your Strapi instance after it's done initially building to create your admin account. The local admin is usually at: [http://localhost:1337/admin](http://localhost:1337/admin)
 
 7. Create an API Token for Strapi by going to the `Settings > API Tokens` section of the admin. Use these values:
 
@@ -69,11 +81,17 @@ npm run develop
 
 After creating the token it will show on the screen at the top. It only shows once! Copy and paste it into the .env value for `STRAPI_API_KEY` in your `catalyst-strapi-storefront` repo.
 
-8. Now it's time to import the sample data into Strapi. Stop the instance of Strapi in the terminal and run the following command: `npm run strapi import -- -f strapi-demo-export.tar.gz`
+8. Now it's time to import the sample data into Strapi. Stop the instance of Strapi in the terminal and run the following command: 
+```shell copy
+npm run strapi import -- -f strapi-demo-export.tar.gz
+```
 
 It will ask you if you are ok with deleting your database and assets. Say (y)es.
 
-9. Start Strapi back up by running: `npm run develop`
+9. Start Strapi back up by running:
+```shell copy
+npm run develop
+```
 
 After logging into Strapi, you should see sample entries have been imported that match the demo site.
 
